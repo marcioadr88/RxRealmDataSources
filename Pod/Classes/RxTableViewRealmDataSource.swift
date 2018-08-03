@@ -84,10 +84,8 @@ import RxRealm
         private let fromRow = {(row: Int) in return IndexPath(row: row, section: 0)}
 
         func applyChanges(items: AnyRealmCollection<E>, changes: RealmChangeset?) {
-            if self.items == nil {
-                self.items = items
-            }
-
+            self.items = items
+            
             guard let tableView = tableView else {
                 fatalError("You have to bind a table view to the data source.")
             }
